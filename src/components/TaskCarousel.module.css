@@ -1,0 +1,113 @@
+.carouselContainer {
+  width: 100%;
+  position: relative;
+  margin: 28px 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+.fadeEdges {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+}
+
+.track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: continuousScroll 38s linear infinite;
+  will-change: transform;
+  padding: 12px 0 20px 0;
+  pointer-events: none; /* Never stops or intercepts pointer events */
+}
+
+.taskCard {
+  width: 360px;
+  flex-shrink: 0;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cardCategory {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.cardBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.diagramBox {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promptText {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+@keyframes continuousScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    overflow-x: auto;
+    width: 100%;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .taskCard {
+    width: 290px;
+    padding: 16px;
+  }
+}

@@ -1,0 +1,152 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.svgWrapper {
+  width: 100%;
+  aspect-ratio: 540 / 280;
+  position: relative;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mainLine {
+  stroke: var(--color-text);
+  stroke-width: 2.25;
+  stroke-linecap: round;
+}
+
+.transversalLine {
+  stroke: var(--color-text);
+  stroke-width: 2.25;
+  stroke-linecap: round;
+}
+
+.auxiliaryLine {
+  stroke: var(--color-text-secondary);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+
+.lineLabel {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 600;
+  fill: var(--color-text);
+}
+
+.vertexLabel {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  fill: var(--color-text);
+}
+
+/* Soft sector wedge fills */
+.wedgeFill {
+  fill: transparent;
+  transition: fill 0.25s ease, opacity 0.25s ease;
+}
+
+.wedgeFillActivePrimary {
+  fill: rgba(18, 19, 26, 0.09);
+}
+
+.wedgeFillActiveSecondary {
+  fill: rgba(18, 19, 26, 0.16);
+}
+
+/* Crisp arc lines */
+.angleArc {
+  fill: none;
+  stroke: rgba(18, 19, 26, 0.3);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transition: stroke 0.25s ease, stroke-width 0.25s ease;
+}
+
+.angleArcActivePrimary {
+  stroke: var(--color-text);
+  stroke-width: 2.5;
+}
+
+.angleArcActiveSecondary {
+  stroke: var(--color-text);
+  stroke-width: 2.5;
+}
+
+/* Angle numeral label (clean typography, no black boxes) */
+.angleNumeral {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  fill: var(--color-text);
+  text-anchor: middle;
+  dominant-baseline: central;
+  transition: transform 0.2s ease, font-size 0.2s ease;
+}
+
+.angleNumeralActive {
+  font-size: 17px;
+  font-weight: 700;
+  fill: var(--color-text);
+}
+
+/* Interactive group */
+.angleInteractive {
+  cursor: pointer;
+}
+
+.angleInteractive:hover .angleNumeral {
+  font-size: 18px;
+}
+
+.angleInteractive:hover .angleArc {
+  stroke: var(--color-text);
+  stroke-width: 2.2;
+}
+
+/* Clean lightweight value pill (for 65°, x, etc.) */
+.valuePill {
+  fill: #FFFFFF;
+  stroke: var(--color-border);
+  stroke-width: 1;
+  rx: 4;
+  ry: 4;
+  transition: all 0.2s ease;
+}
+
+.valuePillActive {
+  fill: #FFFFFF;
+  stroke: var(--color-text);
+  stroke-width: 1.75;
+}
+
+.valuePillText {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: central;
+  fill: var(--color-text);
+}
+
+.noteText {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-align: center;
+}

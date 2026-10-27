@@ -1,0 +1,341 @@
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 24px 80px 24px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.progressLabel {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+.btnRestart {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.btnRestart:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+.progressBarTrack {
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--color-text);
+  transition: width 0.3s ease;
+}
+
+/* Question Card */
+.questionCard {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 36px;
+  animation: softSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes softSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Two-column layout on wide screens */
+.cardLayout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+/* Left side: Task header & diagram */
+.taskSide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.questionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.questionTitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.questionPrompt {
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.diagramWrapper {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right side: Options, feedback, action button */
+.interactionSide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.optionBtn {
+  padding: 14px 18px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-fast);
+}
+
+.optionBtn:hover:not(:disabled) {
+  border-color: var(--color-text);
+  background-color: var(--color-surface);
+  transform: translateY(-1px);
+}
+
+.optionIndex {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  width: 20px;
+}
+
+.optionText {
+  flex: 1;
+}
+
+.optionCorrect {
+  border-color: var(--color-success) !important;
+  background-color: var(--color-success-bg) !important;
+  color: var(--color-success) !important;
+  font-weight: 600;
+}
+
+.optionIncorrect {
+  border-color: var(--color-error) !important;
+  background-color: var(--color-error-bg) !important;
+  color: var(--color-error) !important;
+}
+
+/* Feedback Box */
+.feedbackBox {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-text);
+  border-radius: 4px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.feedbackHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.feedbackStatusCorrect {
+  font-family: var(--font-heading);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+.feedbackStatusIncorrect {
+  font-family: var(--font-heading);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--color-error);
+}
+
+.theoremTag {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.theoremName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.explanationText {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.actionsBar {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.btnTheory {
+  flex: 1;
+  padding: 13px 18px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  text-align: center;
+  cursor: pointer;
+}
+
+.btnTheory:hover {
+  background-color: var(--color-surface);
+  border-color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+.btnNext {
+  flex: 1;
+  padding: 13px 20px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: var(--color-text);
+  border: 1px solid var(--color-text);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  text-align: center;
+  cursor: pointer;
+}
+
+.btnNext:hover {
+  background-color: #2D2F3E;
+  transform: translateY(-1px);
+}
+
+/* Completion summary */
+.completedCard {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 48px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.completedTitle {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.completedScore {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.completedDescription {
+  font-size: 1.0625rem;
+  color: var(--color-text-secondary);
+  max-width: 500px;
+}
+
+.completedActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile & tablet single column stack */
+@media (max-width: 860px) {
+  .questionCard {
+    padding: 24px 18px;
+  }
+
+  .cardLayout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .actionsBar {
+    flex-direction: column;
+  }
+}

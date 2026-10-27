@@ -1,0 +1,236 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 80px 24px;
+}
+
+.summaryCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.statusLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.scorePercentage {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.scoreDetails {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.statusMessagePassed {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-success);
+  max-width: 520px;
+  background-color: var(--color-success-bg);
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+
+.statusMessageFailed {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-error);
+  max-width: 520px;
+  background-color: var(--color-error-bg);
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+
+.actionsGroup {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary {
+  padding: 12px 28px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: var(--color-text);
+  border: 1px solid var(--color-text);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.btnPrimary:hover {
+  background-color: #2D2F3E;
+}
+
+.btnSecondary {
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-text);
+}
+
+/* Detailed review list */
+.reviewSection {
+  border-top: 1px solid var(--color-border);
+  padding-top: 40px;
+}
+
+.reviewHeading {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.reviewCard {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reviewCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.reviewQuestionTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.reviewBadgeCorrect {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-success);
+  background-color: var(--color-success-bg);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.reviewBadgeIncorrect {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-error);
+  background-color: var(--color-error-bg);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.reviewPrompt {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.reviewDiagramSide {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.answersCompare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.answerBlock {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background-color: #FFFFFF;
+}
+
+.answerBlockTitle {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.answerBlockValue {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.answerBlockCorrect {
+  border-color: var(--color-success);
+  background-color: var(--color-success-bg);
+}
+
+.explanationBox {
+  background-color: var(--color-surface);
+  border-left: 3px solid var(--color-text);
+  padding: 14px 16px;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.explanationTheorem {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.explanationText {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 680px) {
+  .summaryCard {
+    padding: 24px 16px;
+  }
+
+  .answersCompare {
+    grid-template-columns: 1fr;
+  }
+}

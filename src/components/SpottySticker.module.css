@@ -1,0 +1,36 @@
+.wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.interactive {
+  cursor: pointer;
+  outline: none;
+}
+
+.interactive:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.interactive:hover .sticker {
+  transform: scale(1.08) translateY(-2px);
+}
+
+.interactive:active .sticker {
+  transform: scale(0.96);
+}
+
+.sticker {
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sticker:hover {
+  transform: scale(1.06);
+}
