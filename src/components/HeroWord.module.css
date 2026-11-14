@@ -18,68 +18,32 @@
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 12vw, 9.5rem);
   line-height: 0.95;
-  letter-spacing: 0.01em; /* Constant, unchanging inter-letter spacing */
+  letter-spacing: 0.02em;
   color: var(--color-text);
   text-transform: uppercase;
   white-space: nowrap;
-  animation: wordBreathe 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  font-variation-settings: 'wght' 600;
+  font-weight: 600;
+  animation: heroGentleFloat 4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
 }
 
 .letter {
   display: inline-block;
-  will-change: transform, font-variation-settings, font-weight;
-  animation: letterWave 2.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
   transform-origin: center center;
 }
 
-/* Staggered wave delay along the letters П-А-Р-А-Л-Л-Е-Л-Ь */
-.letter0 { animation-delay: 0s; }
-.letter1 { animation-delay: -0.22s; }
-.letter2 { animation-delay: -0.44s; }
-.letter3 { animation-delay: -0.66s; }
-.letter4 { animation-delay: -0.88s; }
-.letter5 { animation-delay: -1.10s; }
-.letter6 { animation-delay: -1.32s; }
-.letter7 { animation-delay: -1.54s; }
-.letter8 { animation-delay: -1.76s; }
-
-/* Letter weight and soft vertical floating wave */
-@keyframes letterWave {
+@keyframes heroGentleFloat {
   0% {
-    font-variation-settings: 'wght' 280;
-    font-weight: 300;
-    transform: translateY(-3px);
-  }
-  50% {
-    font-variation-settings: 'wght' 480;
-    font-weight: 500;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   100% {
-    font-variation-settings: 'wght' 700;
-    font-weight: 700;
-    transform: translateY(3px);
-  }
-}
-
-/* Symmetrical breathing toward the center: when thinner, contracts to center; when bolder, expands outward */
-@keyframes wordBreathe {
-  0% {
-    letter-spacing: -0.01em;
-    transform: scale(0.97);
-  }
-  100% {
-    letter-spacing: 0.02em;
-    transform: scale(1.02);
+    transform: translateY(-4px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heroWord,
-  .letter {
+  .heroWord {
     animation: none !important;
     transform: none !important;
-    font-variation-settings: 'wght' 600 !important;
-    font-weight: 600 !important;
   }
 }

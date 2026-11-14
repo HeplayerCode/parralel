@@ -124,14 +124,14 @@
 .optionsList {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .optionBtn {
-  padding: 14px 18px;
+  padding: 12px 16px;
   background-color: #FFFFFF;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   font-size: 0.9375rem;
   font-weight: 500;
   color: var(--color-text);
@@ -139,7 +139,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
 }
 
 .optionBtn:hover:not(:disabled) {
@@ -178,8 +179,8 @@
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-left: 3px solid var(--color-text);
-  border-radius: 4px;
-  padding: 18px;
+  border-radius: var(--radius-md);
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -194,15 +195,15 @@
 
 .feedbackStatusCorrect {
   font-family: var(--font-heading);
-  font-size: 1.1875rem;
-  font-weight: 700;
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--color-success);
 }
 
 .feedbackStatusIncorrect {
   font-family: var(--font-heading);
-  font-size: 1.1875rem;
-  font-weight: 700;
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--color-error);
 }
 
@@ -232,14 +233,14 @@
 
 .btnTheory {
   flex: 1;
-  padding: 13px 18px;
+  padding: 12px 16px;
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--color-text);
   background-color: #FFFFFF;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
-  transition: all var(--transition-fast);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
   text-align: center;
   cursor: pointer;
 }
@@ -252,14 +253,14 @@
 
 .btnNext {
   flex: 1;
-  padding: 13px 20px;
+  padding: 12px 20px;
   font-size: 0.9375rem;
   font-weight: 600;
   color: #FFFFFF;
   background-color: var(--color-text);
   border: 1px solid var(--color-text);
-  border-radius: 4px;
-  transition: all var(--transition-fast);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
   text-align: center;
   cursor: pointer;
 }

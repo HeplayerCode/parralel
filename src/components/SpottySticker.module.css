@@ -15,22 +15,22 @@
 .interactive:focus-visible {
   outline: 2px solid var(--color-text);
   outline-offset: 4px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
 }
 
 .interactive:hover .sticker {
-  transform: scale(1.08) translateY(-2px);
+  transform: scale(1.04);
 }
 
 .interactive:active .sticker {
-  transform: scale(0.96);
+  transform: scale(0.98);
 }
 
 .sticker {
   display: block;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform var(--transition-fast);
 }
 
 .sticker:hover {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }

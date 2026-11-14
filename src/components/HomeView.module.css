@@ -47,43 +47,45 @@
 }
 
 .btnPrimary {
-  padding: 14px 32px;
-  font-size: 1rem;
+  padding: 12px 28px;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: #FFFFFF;
   background-color: var(--color-text);
   border: 1px solid var(--color-text);
-  border-radius: 4px;
-  transition: all var(--transition-fast);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .btnPrimary:hover {
   background-color: #2D2F3E;
   border-color: #2D2F3E;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .btnSecondary {
-  padding: 14px 28px;
-  font-size: 1rem;
+  padding: 12px 24px;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: var(--color-text);
   background: transparent;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
-  transition: all var(--transition-fast);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .btnSecondary:hover {
   border-color: var(--color-text);
   background-color: var(--color-surface);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 /* Fluid Carousel Section */
@@ -144,11 +146,11 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform var(--transition-fast);
 }
 
 .stageCard:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .stageTopRow {
@@ -159,7 +161,7 @@
 
 .stageNumber {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--color-text-secondary);
   letter-spacing: -0.01em;
@@ -167,10 +169,10 @@
 
 .stageTitle {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--color-text);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .stageDescription {
