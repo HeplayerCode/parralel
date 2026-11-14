@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { ExamResult } from './types';
 import { useRouter } from './utils/router';
 import { isAccessUnlocked, revokeAccess } from './utils/auth';
-import { getStorageItem } from './utils/storage';
+import { getStorageItem, getDesignMode, setDesignMode, DesignMode } from './utils/storage';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { FooterMobbin } from './components/FooterMobbin';
 import { HomeView } from './components/HomeView';
+import { HomeViewModern } from './components/HomeViewModern';
 import { TheoryView } from './components/TheoryView';
 import { PracticeView } from './components/PracticeView';
 import { ExamView } from './components/ExamView';
@@ -20,6 +22,12 @@ export const App: React.FC = () => {
   const [unlocked, setUnlocked] = useState<boolean>(() => isAccessUnlocked());
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isGetAccessOpen, setIsGetAccessOpen] = useState(false);
+  const [designMode, setDesignModeState] = useState<DesignMode>(() => getDesignMode());
+
+  const handleToggleDesignMode = (mode: DesignMode) => {
+    setDesignMode(mode);
+    setDesignModeState(mode);
+  };
 
   const [examResult, setExamResult] = useState<ExamResult | null>(() => {
     return getStorageItem<ExamResult | null>('parallel_last_exam_result', null);
@@ -127,7 +135,12 @@ export const App: React.FC = () => {
         return <CertificateView result={examResult} onNavigate={navigate} />;
       case 'home':
       default:
-        return (
+        return designMode === 'modern' ? (
+          <HomeViewModern
+            onNavigate={navigate}
+            onOpenGetAccess={() => setIsGetAccessOpen(true)}
+          />
+        ) : (
           <HomeView
             onNavigate={navigate}
             onOpenGetAccess={() => setIsGetAccessOpen(true)}
@@ -149,13 +162,27 @@ export const App: React.FC = () => {
         onOpenLogin={() => setIsLoginOpen(true)}
         onOpenGetAccess={() => setIsGetAccessOpen(true)}
         onRevokeAccess={handleRevoke}
+        designMode={designMode}
+        onToggleDesignMode={() =>
+          handleToggleDesignMode(designMode === 'modern' ? 'classic' : 'modern')
+        }
       />
 
       <main id="main-content" tabIndex={-1} style={{ outline: 'none' }}>
         {renderCurrentView()}
       </main>
 
-      <Footer onNavigate={navigate} />
+      {designMode === 'modern' ? (
+        <FooterMobbin
+          onNavigate={navigate}
+          onSwitchToClassic={() => handleToggleDesignMode('classic')}
+        />
+      ) : (
+        <Footer
+          onNavigate={navigate}
+          onSwitchToModern={() => handleToggleDesignMode('modern')}
+        />
+      )}
 
       {/* Access Modals */}
       <AccessModal

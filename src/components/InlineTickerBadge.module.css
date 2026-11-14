@@ -1,0 +1,110 @@
+.tickerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 14px 4px 10px;
+  margin: 0 6px;
+  vertical-align: 0.12em;
+  background-color: #12131A;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  position: relative;
+}
+
+.tickerBadge:hover {
+  background-color: #1F212D;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.tickerBadge:active {
+  transform: translateY(0);
+}
+
+.tickerBadge:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: #93C5FD;
+  flex-shrink: 0;
+}
+
+.iconSvg {
+  display: block;
+}
+
+.labelWrapper {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.3em;
+  line-height: 1.3em;
+}
+
+.labelText {
+  display: block;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animating .labelText {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.badgeMeta {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #E2E8F0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.chevronIcon {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  margin-left: -2px;
+  transition: opacity 0.15s ease;
+}
+
+.tickerBadge:hover .chevronIcon {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .tickerBadge {
+    padding: 3px 8px 3px 6px;
+    gap: 6px;
+    font-size: 0.85em;
+  }
+
+  .badgeMeta {
+    display: none;
+  }
+}

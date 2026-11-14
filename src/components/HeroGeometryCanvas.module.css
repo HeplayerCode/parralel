@@ -1,0 +1,243 @@
+.canvasContainer {
+  background-color: #0E0F14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.topToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.telemetryGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.monoChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xs, 4px);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10B981;
+}
+
+.lineTag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #CBD5E1;
+  padding: 2px 6px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-xs, 4px);
+}
+
+.presetsGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.presetBtn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94A3B8;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.presetBtn:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.presetBtnActive {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.16);
+  font-weight: 600;
+}
+
+.presetBtn:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 1px;
+}
+
+.svgWrapper {
+  width: 100%;
+  position: relative;
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.25) 0%, rgba(14, 15, 20, 0.8) 100%);
+  padding: 16px 8px;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.parallelLine {
+  stroke: #64748B;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.transversalLine {
+  stroke: #94A3B8;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.lineLabel {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  fill: #94A3B8;
+}
+
+.transversalLabel {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  fill: #94A3B8;
+}
+
+.arcStroke {
+  stroke: #475569;
+  stroke-width: 1.5;
+  fill: none;
+  transition: stroke 0.15s ease, stroke-width 0.15s ease;
+}
+
+.arcStrokeHighlighted {
+  stroke: #60A5FA;
+  stroke-width: 2.5;
+}
+
+.wedgeFill {
+  fill: rgba(59, 130, 246, 0.25);
+  transition: fill 0.2s ease;
+}
+
+.angleCircle {
+  fill: #1E2230;
+  stroke: #334155;
+  stroke-width: 1.5;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.angleGroup:hover .angleCircle {
+  fill: #2D3748;
+  stroke: #60A5FA;
+}
+
+.angleCircleHighlighted {
+  fill: #2563EB;
+  stroke: #93C5FD;
+}
+
+.angleLabelText {
+  fill: #CBD5E1;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  user-select: none;
+  pointer-events: none;
+}
+
+.angleLabelTextHighlighted {
+  fill: #FFFFFF;
+}
+
+.bottomBar {
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.readoutFormula {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.formulaTag {
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: #60A5FA;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.formulaValue {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #F8FAFC;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs, 4px);
+}
+
+.readoutNote {
+  font-size: 0.8125rem;
+  color: #94A3B8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .topToolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .presetsGroup {
+    width: 100%;
+  }
+
+  .presetBtn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}

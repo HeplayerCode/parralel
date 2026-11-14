@@ -65,3 +65,14 @@ export function removeStorageItem(key: string): void {
     console.warn(`[Storage] Failed to delete key "${key}":`, error);
   }
 }
+
+export type DesignMode = 'modern' | 'classic';
+
+export function getDesignMode(): DesignMode {
+  return getStorageItem<DesignMode>('parallel_design_mode', 'modern');
+}
+
+export function setDesignMode(mode: DesignMode): void {
+  setStorageItem<DesignMode>('parallel_design_mode', mode);
+}
+

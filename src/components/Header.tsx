@@ -9,6 +9,8 @@ interface HeaderProps {
   onOpenLogin: () => void;
   onOpenGetAccess: () => void;
   onRevokeAccess: () => void;
+  designMode?: 'modern' | 'classic';
+  onToggleDesignMode?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -18,6 +20,8 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenLogin,
   onOpenGetAccess,
   onRevokeAccess,
+  designMode = 'modern',
+  onToggleDesignMode,
 }) => {
   return (
     <header className={`${styles.header} no-print`} role="banner">
@@ -61,6 +65,19 @@ export const Header: React.FC<HeaderProps> = ({
         </nav>
 
         <div className={styles.actions}>
+          {onToggleDesignMode && (
+            <button
+              type="button"
+              className={styles.designToggleBtn}
+              onClick={onToggleDesignMode}
+              title={designMode === 'modern' ? 'Переключить на классический вид' : 'Включить современный дизайн Mobbin'}
+              aria-label={`Текущий режим: ${designMode === 'modern' ? 'Mobbin' : 'Классика'}. Нажмите для смены.`}
+            >
+              <span className={styles.designToggleDot} aria-hidden="true" />
+              <span>{designMode === 'modern' ? 'Mobbin' : 'Классика'}</span>
+            </button>
+          )}
+
           {isUnlocked ? (
             <>
               <div className={styles.accessBadge} title="Доступ к тренажёру подтверждён">

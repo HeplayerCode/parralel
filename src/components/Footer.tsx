@@ -4,9 +4,10 @@ import styles from './Footer.module.css';
 
 interface FooterProps {
   onNavigate: (route: AppRoute) => void;
+  onSwitchToModern?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onSwitchToModern }) => {
   return (
     <footer className={`${styles.footer} no-print`} role="contentinfo">
       <div className={styles.inner}>
@@ -106,6 +107,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className={styles.copyright}>
             © 2026 ПАРАЛЛЕЛЬ. Образовательный тренажёр по геометрии.
           </div>
+          {onSwitchToModern && (
+            <button
+              type="button"
+              className={styles.switchModernBtn}
+              onClick={onSwitchToModern}
+              title="Переключить на современный дизайн Mobbin Edition"
+            >
+              <span>✦ Включить Mobbin-дизайн</span>
+            </button>
+          )}
           <div className={styles.authorsTag}>
             Mironov &amp; Kondratiev
           </div>
